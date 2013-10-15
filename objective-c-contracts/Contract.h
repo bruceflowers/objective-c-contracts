@@ -10,6 +10,13 @@
 #import "PreconditionException.h"
 #import "PostConditionException.h"
 
+// ***NOTE: in order to turn on exceptions, you must define THROW_CONTRACT_EXCEPTIONS in your project.
+// #define THROW_CONTRACT_EXCEPTIONS 1
+
+#define Precondition(x) [Contract precondition:x]
+#define Postcondition(x) [Contract postcondition:x]
+
+
 @interface Contract : NSObject
 
 +(void)precondition:(BOOL *)condition;

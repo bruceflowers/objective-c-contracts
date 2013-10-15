@@ -8,18 +8,34 @@
 
 #import "Contract.h"
 
+// ***NOTE: in order to turn on exceptions, you must define THROW_CONTRACT_EXCEPTIONS in your project.
+
+
 @implementation Contract
 
+
 + (void)precondition:(BOOL *)expression {
-    if (expression == NO) {
-        [PreconditionException raise:@"Precondition not met" format:nil];
-    }
+    
+    #ifdef THROW_CONTRACT_EXCEPTIONS
+    
+        if (expression == NO) {
+            [PreconditionException raise:@"Precondition not met" format:nil];
+        }
+    
+    #endif
+    
 }
 
 + (void)postcondition:(BOOL *)expression {
-    if (expression == NO) {
-        [PostConditionException raise:@"Postcondition not met" format:nil];
-    }
+    
+    #ifdef THROW_CONTRACT_EXCEPTIONS
+    
+        if (expression == NO) {
+            [PostConditionException raise:@"Postcondition not met" format:nil];
+        }
+    
+    #endif
 }
+
 
 @end

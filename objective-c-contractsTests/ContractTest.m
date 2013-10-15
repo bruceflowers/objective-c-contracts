@@ -9,12 +9,13 @@
 #import <XCTest/XCTest.h>
 #import "Contract.h"
 
-#define Precondition(x) [Contract precondition:x]
-#define Postcondition(x) [Contract postcondition:x]
+#define THROW_CONTRACT_EXCEPTIONS 1
+
 
 @interface ContractTest : XCTestCase
 
 @end
+
 
 @implementation ContractTest {
 }
