@@ -9,6 +9,9 @@
 #import <XCTest/XCTest.h>
 #import "Contract.h"
 
+#define Precondition(x) [Contract precondition:x]
+#define Postcondition(x) [Contract postcondition:x]
+
 @interface ContractTest : XCTestCase
 
 @end
@@ -28,12 +31,42 @@
     [super tearDown];
 }
 
-- (void)testPrecondition
+- (void)testPrecondition_MACRO_doesNotThrowIfMet
+{
+    XCTAssertNoThrowSpecific(Precondition(YES), PreconditionException);
+}
+
+- (void)testPostcondition_MACRO_doesNotThrowIfMet
+{
+    XCTAssertNoThrowSpecific(Postcondition(YES), PostConditionException);
+}
+
+- (void)testPrecondition_MACRO_throwsIfNotMet
+{
+    XCTAssertThrowsSpecific(Precondition(NO), PreconditionException);
+}
+
+- (void)testPostcondition_MACRO_throwsIfNotMet
+{
+    XCTAssertThrowsSpecific(Postcondition(NO), PostConditionException);
+}
+
+- (void)testPrecondition_doesNotThrowIfMet
 {
     XCTAssertThrowsSpecific([Contract precondition:NO], PreconditionException);
 }
 
-- (void)testPostcondition
+- (void)testPostcondition_doesNotThrowIfMet
+{
+    XCTAssertThrowsSpecific([Contract postcondition:NO], PostConditionException);
+}
+
+- (void)testPrecondition_throwsIfNotMet
+{
+    XCTAssertThrowsSpecific([Contract precondition:NO], PreconditionException);
+}
+
+- (void)testPostcondition_throwsIfNotMet
 {
     XCTAssertThrowsSpecific([Contract postcondition:NO], PostConditionException);
 }
