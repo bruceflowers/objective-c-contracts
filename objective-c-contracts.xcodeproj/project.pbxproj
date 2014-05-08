@@ -19,8 +19,8 @@
 		51F6BE9C180DCBC300447D0B /* Contract.m in Sources */ = {isa = PBXBuildFile; fileRef = 51F6BE9B180DCBC300447D0B /* Contract.m */; };
 		51F6BE9D180DCBC300447D0B /* Contract.m in Sources */ = {isa = PBXBuildFile; fileRef = 51F6BE9B180DCBC300447D0B /* Contract.m */; };
 		51F6BE9F180DCBF100447D0B /* ContractTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 51F6BE9E180DCBF100447D0B /* ContractTest.m */; };
-		51F6BEA2180DCD7800447D0B /* PreconditionException.m in Sources */ = {isa = PBXBuildFile; fileRef = 51F6BEA1180DCD7800447D0B /* PreconditionException.m */; };
-		51F6BEA3180DCD7800447D0B /* PreconditionException.m in Sources */ = {isa = PBXBuildFile; fileRef = 51F6BEA1180DCD7800447D0B /* PreconditionException.m */; };
+		51F6BEA2180DCD7800447D0B /* PreConditionException.m in Sources */ = {isa = PBXBuildFile; fileRef = 51F6BEA1180DCD7800447D0B /* PreConditionException.m */; };
+		51F6BEA3180DCD7800447D0B /* PreConditionException.m in Sources */ = {isa = PBXBuildFile; fileRef = 51F6BEA1180DCD7800447D0B /* PreConditionException.m */; };
 		51F6BEA6180DCDE300447D0B /* PostConditionException.m in Sources */ = {isa = PBXBuildFile; fileRef = 51F6BEA5180DCDE300447D0B /* PostConditionException.m */; };
 		51F6BEA7180DCDE300447D0B /* PostConditionException.m in Sources */ = {isa = PBXBuildFile; fileRef = 51F6BEA5180DCDE300447D0B /* PostConditionException.m */; };
 /* End PBXBuildFile section */
@@ -63,8 +63,8 @@
 		51F6BE9A180DCBC300447D0B /* Contract.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contract.h; sourceTree = "<group>"; };
 		51F6BE9B180DCBC300447D0B /* Contract.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contract.m; sourceTree = "<group>"; };
 		51F6BE9E180DCBF100447D0B /* ContractTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContractTest.m; sourceTree = "<group>"; };
-		51F6BEA0180DCD7800447D0B /* PreconditionException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreconditionException.h; sourceTree = "<group>"; };
-		51F6BEA1180DCD7800447D0B /* PreconditionException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreconditionException.m; sourceTree = "<group>"; };
+		51F6BEA0180DCD7800447D0B /* PreConditionException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreConditionException.h; sourceTree = "<group>"; };
+		51F6BEA1180DCD7800447D0B /* PreConditionException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreConditionException.m; sourceTree = "<group>"; };
 		51F6BEA4180DCDE300447D0B /* PostConditionException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostConditionException.h; sourceTree = "<group>"; };
 		51F6BEA5180DCDE300447D0B /* PostConditionException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostConditionException.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -126,13 +126,13 @@
 			children = (
 				51F6BE79180DCB0F00447D0B /* objective_c_contracts.h */,
 				51F6BE7B180DCB0F00447D0B /* objective_c_contracts.m */,
-				51F6BE77180DCB0F00447D0B /* Supporting Files */,
 				51F6BE9A180DCBC300447D0B /* Contract.h */,
 				51F6BE9B180DCBC300447D0B /* Contract.m */,
-				51F6BEA0180DCD7800447D0B /* PreconditionException.h */,
-				51F6BEA1180DCD7800447D0B /* PreconditionException.m */,
+				51F6BEA0180DCD7800447D0B /* PreConditionException.h */,
+				51F6BEA1180DCD7800447D0B /* PreConditionException.m */,
 				51F6BEA4180DCDE300447D0B /* PostConditionException.h */,
 				51F6BEA5180DCDE300447D0B /* PostConditionException.m */,
+				51F6BE77180DCB0F00447D0B /* Supporting Files */,
 			);
 			path = "objective-c-contracts";
 			sourceTree = "<group>";
@@ -149,8 +149,8 @@
 			isa = PBXGroup;
 			children = (
 				51F6BE90180DCB0F00447D0B /* objective_c_contractsTests.m */,
-				51F6BE8B180DCB0F00447D0B /* Supporting Files */,
 				51F6BE9E180DCBF100447D0B /* ContractTest.m */,
+				51F6BE8B180DCB0F00447D0B /* Supporting Files */,
 			);
 			path = "objective-c-contractsTests";
 			sourceTree = "<group>";
@@ -247,7 +247,7 @@
 			files = (
 				51F6BE7C180DCB0F00447D0B /* objective_c_contracts.m in Sources */,
 				51F6BE9C180DCBC300447D0B /* Contract.m in Sources */,
-				51F6BEA2180DCD7800447D0B /* PreconditionException.m in Sources */,
+				51F6BEA2180DCD7800447D0B /* PreConditionException.m in Sources */,
 				51F6BEA6180DCDE300447D0B /* PostConditionException.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,7 +260,7 @@
 				51F6BE91180DCB0F00447D0B /* objective_c_contractsTests.m in Sources */,
 				51F6BEA7180DCDE300447D0B /* PostConditionException.m in Sources */,
 				51F6BE9D180DCBC300447D0B /* Contract.m in Sources */,
-				51F6BEA3180DCD7800447D0B /* PreconditionException.m in Sources */,
+				51F6BEA3180DCD7800447D0B /* PreConditionException.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

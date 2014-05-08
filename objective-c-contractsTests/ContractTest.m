@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "Contract.h"
+#import "PreConditionException.h"
 
 #define THROW_CONTRACT_EXCEPTIONS 1
 
@@ -17,59 +18,45 @@
 @end
 
 
-@implementation ContractTest {
+@implementation ContractTest
+
+
+- (void)testPrecondition_MACRO_doesNotThrowIfTrue
+{
+    XCTAssertNoThrowSpecific(Precondition(YES==YES), PreConditionException);
 }
 
-- (void)setUp
+- (void)testPrecondition_MACRO_doesNotThrowIfTrue2
 {
-    [super setUp];
-    // Put setup code here; it will be run once, before the first test case.
+    XCTAssertNoThrowSpecific(Precondition(YES==YES), PreConditionException);
 }
 
-- (void)tearDown
+- (void)testPostcondition_MACRO_doesNotThrowIfTrue
 {
-    // Put teardown code here; it will be run once, after the last test case.
-    [super tearDown];
+    XCTAssertNoThrowSpecific(Postcondition(YES==YES), PostConditionException);
 }
 
-- (void)testPrecondition_MACRO_doesNotThrowIfMet
+- (void)testPrecondition_MACRO_throwsIfNotTrue
 {
-    XCTAssertNoThrowSpecific(Precondition(YES), PreconditionException);
+    XCTAssertThrowsSpecific(Precondition(YES==NO), PreConditionException);
 }
 
-- (void)testPostcondition_MACRO_doesNotThrowIfMet
+- (void)testPostcondition_MACRO_throwsIfNotTrue
 {
-    XCTAssertNoThrowSpecific(Postcondition(YES), PostConditionException);
+    XCTAssertThrowsSpecific(Postcondition(YES==NO), PostConditionException);
 }
 
-- (void)testPrecondition_MACRO_throwsIfNotMet
+- (void)testPrecondition_MACRO_throwsSpecificWithReason
 {
-    XCTAssertThrowsSpecific(Precondition(NO), PreconditionException);
+    NSString *reason = STRINGIFY_EXPRESSION(YES==NO);
+    XCTAssertThrowsSpecificWithReason(Precondition(YES==NO), PreConditionException, reason);
 }
 
-- (void)testPostcondition_MACRO_throwsIfNotMet
+- (void)testPostcondition_MACRO_throwsSpecificWithReason
 {
-    XCTAssertThrowsSpecific(Postcondition(NO), PostConditionException);
+    NSString *reason = STRINGIFY_EXPRESSION(YES==NO);
+    XCTAssertThrowsSpecificWithReason(Postcondition(YES==NO), PostConditionException, reason);
 }
 
-- (void)testPrecondition_doesNotThrowIfMet
-{
-    XCTAssertThrowsSpecific([Contract precondition:NO], PreconditionException);
-}
-
-- (void)testPostcondition_doesNotThrowIfMet
-{
-    XCTAssertThrowsSpecific([Contract postcondition:NO], PostConditionException);
-}
-
-- (void)testPrecondition_throwsIfNotMet
-{
-    XCTAssertThrowsSpecific([Contract precondition:NO], PreconditionException);
-}
-
-- (void)testPostcondition_throwsIfNotMet
-{
-    XCTAssertThrowsSpecific([Contract postcondition:NO], PostConditionException);
-}
 
 @end

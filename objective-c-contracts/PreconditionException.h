@@ -1,5 +1,5 @@
 //
-//  PreconditionException.h
+//  PreConditionException.h
 //  objective-c-contracts
 //
 //  Created by Bruce Flowers on 10/15/13.
@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PreconditionException : NSException
+@interface PreConditionException : NSException
 
 @end
