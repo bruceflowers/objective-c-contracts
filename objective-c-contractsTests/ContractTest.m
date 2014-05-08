@@ -26,11 +26,6 @@
     XCTAssertNoThrowSpecific(Precondition(YES==YES), PreConditionException);
 }
 
-- (void)testPrecondition_MACRO_doesNotThrowIfTrue2
-{
-    XCTAssertNoThrowSpecific(Precondition(YES==YES), PreConditionException);
-}
-
 - (void)testPostcondition_MACRO_doesNotThrowIfTrue
 {
     XCTAssertNoThrowSpecific(Postcondition(YES==YES), PostConditionException);
